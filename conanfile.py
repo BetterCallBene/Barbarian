@@ -64,9 +64,8 @@ class BarbarianConan(ConanFile):
 			print(path)
 			with(open(path, "w")) as f:
 				f.write(r'''if not exist %CMDER_ROOT%\config\profile.d\python_third_party_installed (  
-    python.exe -m pip install --index-url https://artifactory.wob.vw.vwg:8443/artifactory/api/pypi/pypi/simple --trusted-host artifactory.wob.vw.vwg:8443 --upgrade pip
-    pip install --index-url https://artifactory.wob.vw.vwg:8443/artifactory/api/pypi/pypi/simple --trusted-host artifactory.wob.vw.vwg:8443 conan
-    conan remote add conan-repo https://devstack.vwgroup.com/artifactory/api/conan/phpve
+    python.exe -m pip install --upgrade pip
+    pip install conan
     bash Conan_Setup_Small.sh
     copy "" > %CMDER_ROOT%\config\profile.d\python_third_party_installed
 )''')
